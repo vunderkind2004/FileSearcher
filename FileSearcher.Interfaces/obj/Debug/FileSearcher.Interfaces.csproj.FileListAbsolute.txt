@@ -1,0 +1,10 @@
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.csprojResolveAssemblyReference.cache
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Interfaces\bin\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Interfaces\bin\Debug\FileSearcher.Interfaces.pdb
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.pdb
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Interfaces\bin\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Interfaces\bin\Debug\FileSearcher.Interfaces.pdb
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.csprojResolveAssemblyReference.cache
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Interfaces\obj\Debug\FileSearcher.Interfaces.pdb

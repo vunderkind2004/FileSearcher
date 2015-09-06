@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">*@
+    <script type="text/javascript" src="~/Script/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="~/Content/StyleSheets/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/StyleSheets/MainStyle.css" />    
+    <title>@ViewBag.Title</title>
+</head>
+<body>    
+    <div class="container">
+        <div class="row">
+            <div class="logo col-md-4">
+                <a href="@Url.Action("Index","Home",null)">
+                    <img src="~/Content/images/rsz_searchTool.png" />                
+                </a>
+            </div>
+            <div class="col-md-8">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\bin\Debug\FileSearcher.Core.dll
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\bin\Debug\FileSearcher.Core.pdb
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\bin\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\bin\Debug\FileSearcher.Interfaces.pdb
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\obj\Debug\FileSearcher.Core.csprojResolveAssemblyReference.cache
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\obj\Debug\FileSearcher.Core.dll
+D:\My_PROGRAMS\TESTS\FileSearcher\FileSearcher.Core\obj\Debug\FileSearcher.Core.pdb
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\bin\Debug\FileSearcher.Core.dll
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\bin\Debug\FileSearcher.Core.pdb
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\bin\Debug\FileSearcher.Interfaces.dll
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\bin\Debug\FileSearcher.Interfaces.pdb
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\obj\Debug\FileSearcher.Core.csprojResolveAssemblyReference.cache
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\obj\Debug\FileSearcher.Core.dll
+D:\My_PROGRAMS\TESTS\FileSearcherSVN\FileSearcher.Core\obj\Debug\FileSearcher.Core.pdb

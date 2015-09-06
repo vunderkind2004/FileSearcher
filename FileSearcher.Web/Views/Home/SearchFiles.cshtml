@@ -1,0 +1,159 @@
+﻿@model FS.Web.ViewModels.FileSearcherViewModel
+@{
+    ViewBag.Title = "Search files";
+    Layout = "~/Views/_Layout.cshtml";
+    var i = 0;
+    var displayResult = "";
+    if(Model==null||Model.Files==null||!Model.Files.Any())
+    {
+        displayResult = "none";
+    }
+}
+
+@using (Html.BeginForm("SearchFiles", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m=>m.FileSearcherId)
+
+    @Html.LabelFor(m => m.Directory, new {@class = "control-lable" })
+    @Html.ValidationMessageFor(m => m.Directory)
+    @Html.TextBoxFor(m=>m.Directory, new {@class = "form-control" })
+       
+
+    @Html.LabelFor(m=>m.SearchString, new {@class = "control-lable" })
+    @Html.ValidationMessageFor(m => m.SearchString)
+    @Html.TextBoxFor(m=>m.SearchString, new {@class = "form-control" })
+    
+    
+    <input id="BtnSearch" type="button" class="btn btn-primary"  value="Search" onclick="turnOnProgress();"/>
+    <input id="BtnStop" type="button" class="btn btn-danger"  value="Stop" onclick="Stop();"/>
+}
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+    0%
+  </div>
+</div>
+
+
+    @if (Model != null && Model.Files != null)
+    {        
+        <h3  class="text-center result">Found @Model.Files.Count() files</h3>
+    }    
+
+ <div id="result" style="display:@displayResult">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>File name</th>
+                    </tr>
+                </thead>
+                <tbody class="result">  
+                    @{if (Model != null && Model.Files != null)
+                          {foreach (var file in Model.Files)
+                          {
+                              i++;
+                            <tr>
+                                <td>@i</td>
+                                <td class="file">@file</td>
+                            </tr>
+                          }
+                        }
+                    }
+                </tbody>
+            </table>
+        
+    
+   
+</div>
+
+<script type="text/javascript">
+    $().ready(function() {
+        $(".progress").hide();
+        $("#BtnStop").prop("disabled",true);
+    });
+    
+    function turnOnProgress()
+    {
+        
+        $("tbody .result").html("");
+        $(".progress").show();
+        $("tbody.result").html("");
+        showCount(0);
+        $("#result").show();
+        setInterval(function () {
+            updateProgress();
+            GetAndShowTempResult();
+        }, 2000);        
+        $("form").submit()
+        $("form input").prop("disabled", true);
+        $("#BtnStop").prop("disabled", false);
+    }
+
+    function updateProgress()
+    {
+        var id = $("#FileSearcherId").val();
+        $.get("/Home/GetProgress?fileSearcherId=" + id, function (progress) {
+            $(".progress-bar").attr("aria-valuenow", "" + progress).html(progress + "%");
+            if (progress > 2)
+            {
+                $(".progress-bar").attr("style", "width:" + progress + "%");
+            }
+        });
+    }
+    
+    function GetAndShowTempResult()
+    {
+        var id = $("#FileSearcherId").val();
+        
+        $.ajax({
+            type: "POST",
+            url: "/Home/GetTemporaryResult",
+            data: JSON.stringify({ fileSearcherId: id }),
+            processData: false,
+            contentType: 'application/json; charset=utf-8',
+            success: function (result){showTempResult(result);}
+        });
+    }
+
+    function showTempResult(result)
+    {  
+        if (result == null || result.length == 0)            
+            return;
+        
+        var existList = $(".file");
+        var count = existList.length;
+        for (var i = count; i < result.length; i++)
+        {                   
+            count++;                        
+            $("tbody.result").append("<tr><td>" + count + "</td><td class='file'>" + result[i] + "</td></tr>"); 
+        }
+
+        showCount(count);
+        
+    }
+
+    function showCount(count)
+    {
+        if ($("h3.result").length > 0) {
+            $("h3.result").html("Found " + count + " files...");
+        }
+        else {
+            $("#result").prepend("<h3 class='text-center result'>Found " + count + " files...</h3>")
+        }
+    }
+
+    function Stop()
+    {
+        var id = $("#FileSearcherId").val();        
+        $.ajax({
+            type: "POST",
+            url: "/Home/Stop",
+            data: JSON.stringify({ fileSearcherId: id }),
+            processData: false,
+            contentType: 'application/json; charset=utf-8'
+        });
+
+    }
+</script>
