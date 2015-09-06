@@ -8,7 +8,7 @@ namespace FS.Core
 {
     public static class Constants
     {
-        public static List<Encoding> AvailableEncoding = new List<Encoding> { Encoding.ASCII, Encoding.UTF8, Encoding.Unicode };
-        public static int BufferSize = 10*1024;
+        public static readonly List<Encoding> AvailableEncoding = new List<Encoding> { Encoding.ASCII, Encoding.UTF8, Encoding.Unicode };
+        public static readonly int BufferSize = 10*1024;
     }
 }
